@@ -5,20 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aaniin Vendors</title>
   <style>
-    body { font-family: sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; color: #222; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 60px auto; padding: 0 20px; color: #222; }
     h1 { font-size: 2rem; margin-bottom: 0.25em; }
-    p { color: #555; }
-    ul { list-style: none; padding: 0; margin-top: 2em; }
-    li { margin: 0.75em 0; }
-    a { text-decoration: none; font-size: 1.1rem; color: #007bff; }
-    a:hover { text-decoration: underline; }
+    p { color: #555; margin-bottom: 2em; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .card { border: 1px solid #eee; border-radius: 8px; padding: 18px; }
+    .card .num { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #999; margin-bottom: 6px; }
+    .card a { text-decoration: none; font-size: 1rem; font-weight: 600; color: #000; }
+    .card a:hover { color: #DD0000; }
+    .badge { display: inline-block; margin-top: 8px; font-size: 11px; background: #f5f5f5; color: #666; padding: 2px 8px; border-radius: 4px; }
   </style>
 </head>
 <body>
   <h1>Aaniin Vendors</h1>
-  <p>Explore our vendor partners below.</p>
-  <ul>
-    <li><a href="pickle-power/">Pickle Power</a></li>
-  </ul>
+  <p>Explore our vendor partners and proposal landing pages.</p>
+  <div class="grid">
+    <div class="card"><div class="num">vendor #049</div><a href="pickle-power/">Pickle Power</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #050</div><a href="nutratech/">Nutratec Life Sciences</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #051</div><a href="on-call-protein/">On Call Performance</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #052</div><a href="pine-pollen/">Canadian Pine Pollen</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #053</div><a href="pond-natural/">Pond Naturals</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #054</div><a href="wake-water/">WakeWater Beverage Co.</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #055</div><a href="tea-angle/">Teangle</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #056</div><a href="epsom-gel/">Epsomgel Solutions</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #057</div><a href="yumi-organics/">YUMi Organics</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #058</div><a href="becks-broth/">Beck's Broth</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #059</div><a href="aphina/">Aphina</a><div class="badge">summer 2026</div></div>
+    <div class="card"><div class="num">vendor #060</div><a href="nature-mary/">Naturemary</a><div class="badge">summer 2026</div></div>
+  </div>
 </body>
 </html>
