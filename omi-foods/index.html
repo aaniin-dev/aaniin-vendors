@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aaniin x OM Foods -- proposal landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--aa-red:#DD0000;--aa-black:#000000;--aa-ink:#0a0a0a;--aa-muted:#6b6b6b;--aa-line:#ececec;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff;color:var(--aa-ink);font-family:"Poppins",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .util{background:var(--aa-black);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:10px 32px;display:flex;justify-content:space-between;align-items:center;}
+  .util span b{color:var(--aa-red);font-weight:700}
+  header.aa-nav{background:var(--aa-red);color:#000;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:sticky;top:0;z-index:50;}
+  .aa-logo img{height:42px;width:auto;display:block}
+  nav.aa-links{display:flex;gap:28px;font-weight:600;font-size:14px;color:#000}
+  nav.aa-links a{padding:6px 0;border-bottom:2px solid transparent;transition:.15s;color:#000}
+  nav.aa-links a:hover,nav.aa-links a.active{border-color:#000}
+  .aa-tools{display:flex;gap:14px;align-items:center;font-size:13px;color:#000}
+  .aa-tools .pill{background:#000;color:#fff;font-weight:600;font-size:12px;padding:8px 14px;border-radius:999px;letter-spacing:.04em;}
+  .icon-btn{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:1.5px solid #000;color:#000}
+  .icon-btn:hover{background:#000;color:var(--aa-red)}
+  .hero{background:#fff;color:#0a0a0a;padding:80px 32px 0;position:relative;overflow:hidden;}
+  .hero-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:end;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;padding:8px 14px;border-radius:6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:28px;}
+  .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--aa-red)}
+  .hero h1{font-weight:800;font-size:clamp(48px,6vw,92px);line-height:.95;letter-spacing:-.02em;margin-bottom:24px;}
+  .hero h1 em{color:var(--aa-red);font-style:italic}
+  .hero p.lede{font-size:18px;line-height:1.55;max-width:520px;font-weight:400;color:#3a3a3a;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:14px;margin-bottom:56px;flex-wrap:wrap}
+  .btn{font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:4px;display:inline-flex;align-items:center;gap:10px;transition:.15s;cursor:pointer;border:0;}
+  .btn-dark{background:#000;color:#fff}.btn-dark:hover{background:var(--aa-red);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:#000;border:1.5px solid #000}.btn-ghost:hover{background:#000;color:#fff}
+  .btn svg{width:14px;height:14px}
+  .hero-card{background:#f7f7f7;border-radius:8px;aspect-ratio:4/4.4;position:relative;overflow:hidden;border:1px solid var(--aa-line);}
+  .hero-meta{position:absolute;left:20px;bottom:20px;right:20px;display:flex;justify-content:space-between;align-items:end;color:#fff;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;}
+  .hero-meta .lbl{opacity:.6;text-transform:uppercase;margin-bottom:4px}
+  .proposal-strip{margin-top:80px;background:#000;color:#fff;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;}
+  .proposal-strip .right{display:flex;gap:24px}.proposal-strip .right span{opacity:.6}
+  .convo{background:#fff;padding:120px 32px;border-bottom:1px solid var(--aa-line);}
+  .convo-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .convo h2{font-size:clamp(36px,4.4vw,68px);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+  .convo h2 .red{color:var(--aa-red)}.convo h2 em{font-style:italic;color:var(--aa-red)}
+  .convo .body{font-size:17px;line-height:1.65;color:#333;max-width:480px;margin-top:24px}
+  .convo .sig{margin-top:36px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--aa-muted);}
+  .convo-card{aspect-ratio:1/1;border-radius:8px;overflow:hidden;position:relative;}
+  .story{background:#fff;padding:120px 32px;color:#0a0a0a;border-top:1px solid var(--aa-line);}
+  .story-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .story .label{display:inline-block;background:#000;color:#fff;padding:6px 12px;border-radius:4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px;font-weight:600;}
+  .story h2{font-size:clamp(36px,4vw,56px);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:24px}
+  .story h2 em{font-style:italic;color:var(--aa-red)}
+  .story p{font-size:17px;line-height:1.65;margin-bottom:18px;max-width:560px;color:#3a3a3a}
+  .story .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;max-width:560px;padding-top:32px;border-top:1px solid var(--aa-line)}
+  .story .stat .num{font-size:44px;font-weight:800;line-height:1;color:var(--aa-red)}
+  .story .stat .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5a5a5a;margin-top:10px;font-weight:500}
+  .story-images{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px;height:560px}
+  .story-images .img1{grid-row:span 2;border-radius:8px;overflow:hidden}
+  .story-images .img2,.story-images .img3{border-radius:8px;overflow:hidden}
+  .products{padding:120px 32px;background:#fff}
+  .products-head{max-width:1320px;margin:0 auto 56px;display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+  .products-head h2{font-size:clamp(36px,4vw,56px);font-weight:700;letter-spacing:-.02em;line-height:1.02;max-width:640px}
+  .products-head h2 .red{color:var(--aa-red)}
+  .products-head .meta{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--aa-muted)}
+  .products-head .meta b{color:#000;font-weight:600}
+  .product-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .pcard{border:1px solid var(--aa-line);border-radius:8px;overflow:hidden;background:#fff;cursor:pointer;transition:.18s;display:flex;flex-direction:column;}
+  .pcard:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.07);border-color:#d4d4d4}
+  .pcard .img{aspect-ratio:1/1;position:relative;background:#ffffff;overflow:hidden}
+  .pcard .img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .4s ease}
+  .pcard:hover .img img{transform:scale(1.04)}
+  .pcard .badge{position:absolute;top:12px;left:12px;background:#000;color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:4px;font-weight:600;}
+  .pcard .badge.new,.pcard .badge.bestseller{background:var(--aa-red)}
+  .pcard .heart{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#888;}
+  .pcard .info{padding:18px 18px 22px;display:flex;flex-direction:column;gap:6px}
+  .pcard .vendor{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--aa-red);font-weight:600}
+  .pcard .name{font-size:15px;font-weight:600;line-height:1.3}
+  .pcard .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+  .pcard .price{font-size:15px;font-weight:600}
+  .pcard .add{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#000;border-bottom:1.5px solid #000;padding-bottom:2px}
+  .pcard:hover .add{color:var(--aa-red);border-color:var(--aa-red)}
+  .science{background:#fafafa;color:#0a0a0a;padding:120px 32px;border-top:1px solid var(--aa-line);border-bottom:1px solid var(--aa-line);}
+  .science-inner{max-width:1320px;margin:0 auto}
+  .science-head{display:grid;grid-template-columns:.4fr .6fr;gap:48px;margin-bottom:64px;align-items:end}
+  .science-head .label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--aa-red);font-weight:600}
+  .science-head h2{font-size:clamp(36px,4.4vw,72px);font-weight:700;line-height:.98;letter-spacing:-.02em}
+  .science-head h2 em{font-style:italic;color:var(--aa-red)}
+  .science-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:2px solid #000;padding-top:48px}
+  .sci-cell .n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--aa-red);letter-spacing:.12em;margin-bottom:24px;font-weight:600}
+  .sci-cell h3{font-size:24px;font-weight:700;margin-bottom:14px;letter-spacing:-.01em}
+  .sci-cell p{font-size:15px;line-height:1.65;color:#4a4a4a}
+  .uses{padding:90px 0;background:#fff;border-bottom:1px solid var(--aa-line);overflow:hidden}
+  .uses-track{display:flex;gap:48px;font-size:clamp(40px,6vw,84px);font-weight:800;letter-spacing:-.02em;white-space:nowrap;animation:scroll 35s linear infinite}
+  .uses-track span{display:flex;align-items:center;gap:48px}
+  .uses-track .dot{width:14px;height:14px;border-radius:50%;background:var(--aa-red);display:inline-block;flex-shrink:0}
+  .uses-track .red{color:var(--aa-red)}
+  @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .quote{padding:140px 32px;background:var(--aa-red);color:#fff;text-align:center}
+  .quote-inner{max-width:1000px;margin:0 auto}
+  .quote .mark{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:32px;opacity:.85}
+  .quote blockquote{font-size:clamp(28px,3.4vw,46px);line-height:1.2;font-weight:600;letter-spacing:-.01em;margin-bottom:36px}
+  .quote cite{font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+  .quote cite b{color:#000;font-weight:700}
+  .join{padding:140px 32px;background:#fff}
+  .join-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .join h2{font-size:clamp(40px,5vw,72px);font-weight:700;line-height:1;letter-spacing:-.02em;margin-bottom:24px}
+  .join h2 .red{color:var(--aa-red)}
+  .join p{font-size:17px;line-height:1.65;color:#333;margin-bottom:32px;max-width:480px}
+  .join-form{display:flex;border:1.5px solid #000;border-radius:6px;overflow:hidden;max-width:480px}
+  .join-form input{flex:1;padding:16px 18px;border:0;font-family:inherit;font-size:14px;outline:0}
+  .join-form button{background:#000;color:#fff;border:0;padding:0 24px;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .join-form button:hover{background:var(--aa-red)}
+  .join-card{aspect-ratio:5/4;border-radius:8px;overflow:hidden}
+  .join-card img{width:100%;height:100%;object-fit:cover;display:block}
+  footer{background:#000;color:#fff;padding:80px 32px 32px}
+  .foot-inner{max-width:1320px;margin:0 auto}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #2a2a2a}
+  .foot-brand .word{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .foot-brand p{font-size:14px;line-height:1.65;color:#aaa;max-width:340px}
+  .foot-col h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{font-size:14px;color:#bdbdbd}.foot-col a:hover{color:#fff}
+  .foot-bottom{padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#888;letter-spacing:.06em}
+  .foot-bottom .right{display:flex;gap:18px}
+  @media(max-width:1024px){
+    .hero-grid,.convo-inner,.story-inner,.join-inner{grid-template-columns:1fr;gap:32px}
+    .story-images{height:auto}.product-grid{grid-template-columns:repeat(2,1fr)}
+    .science-grid,.science-head{grid-template-columns:1fr;gap:16px}
+    nav.aa-links{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:32px}
+  }
+</style>
+</head>
+<body>
+<div class="util">
+  <span>FREE SHIPPING ON ORDERS OVER <b>$75</b></span>
+  <span>SAY <b style="font-family:Poppins">aaniin</b> -- IT MEANS HELLO</span>
+  <span>EN / FR</span>
+</div>
+<header class="aa-nav">
+  <div class="aa-logo"><img src="images/aaniin-logo.png" alt="aaniin"></div>
+  <nav class="aa-links">
+    <a href="#" class="active">shop all</a><a href="#">apparel</a><a href="#">wellness</a>
+    <a href="#">food + drink</a><a href="#">accessories</a><a href="#">vendors</a><a href="#">about</a>
+  </nav>
+  <div class="aa-tools">
+    <span class="pill">aaniin x om foods</span>
+    <button class="icon-btn" aria-label="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+    <button class="icon-btn" aria-label="cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 7h14l-1.5 11h-11z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg></button>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow"><span class="dot"></span>new on aaniin &middot; vendor spotlight</div>
+      <h1>say aaniin to <em>om foods.</em></h1>
+      <p class="lede">Organic pantry ingredients sourced with integrity — nuts, seeds, ancient grains, and more. Now on aaniin.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-dark">shop om foods <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        <button class="btn btn-ghost">read the story</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="images/hero.jpg" alt="OM Foods" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div class="hero-meta" style="text-shadow:0 1px 8px rgba(0,0,0,.5)">
+        <div><div class="lbl">vendor #074</div><div>om foods</div></div>
+        <div style="text-align:right"><div class="lbl">proposed launch</div><div>aaniin retail &middot; summer '26</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="proposal-strip">
+    <span>proposal preview &middot; om foods &times; aaniin retail inc.</span>
+    <div class="right"><span>page 01 / 04</span><span>aaniin.shop / vendors / omi-foods</span></div>
+  </div>
+</section>
+<section class="convo">
+  <div class="convo-inner">
+    <div>
+      <h2>every <span class="red">pantry</span> deserves ingredients <em>worth trusting.</em></h2>
+      <p class="body">aaniin is a platform for brands that start the conversation. OM Foods earned its shelf because it does what the best suppliers do — it makes organic accessible without cutting corners on where the ingredient came from. The pantry rebuild, done right.</p>
+      <div class="sig">-- aaniin retail inc. &middot; curated, conversational, intentional.</div>
+    </div>
+    <div class="convo-card">
+      <img src="images/lifestyle.jpg" alt="OM Foods lifestyle" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+<section class="story">
+  <div class="story-inner">
+    <div>
+      <span class="label">brand story · organic integrity</span>
+      <h2>the pantry rebuild, <em>done right.</em></h2>
+      <p>OM Foods was built for the cook who reads the sourcing notes, not just the nutrition label. Every ingredient — teff, hazelnuts, coconut oil, oat milk powder — is sourced with premium quality and affordability held in equal measure.</p>
+      <p>From ancient grains like teff to everyday pantry staples, OM Foods makes the organic pantry accessible. The kind of supplier that belongs on every conscious kitchen's shelf — and on aaniin.</p>
+      <div class="stats">
+        <div class="stat"><div class="num">100%</div><div class="lbl">organic sourcing</div></div>
+        <div class="stat"><div class="num">affordable</div><div class="lbl">quality always</div></div>
+        <div class="stat"><div class="num">40+</div><div class="lbl">pantry staples</div></div>
+      </div>
+    </div>
+    <div class="story-images">
+      <div class="img1"><img src="images/lifestyle.jpg" alt="OM Foods" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="img2"><img src="images/product-1.jpg" alt="OM Foods product" style="width:100%;height:100%;object-fit:contain;background:#ffffff;display:block"></div>
+      <div class="img3"><img src="images/lifestyle-2.jpg" alt="OM Foods" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    </div>
+  </div>
+</section>
+<section class="products">
+  <div class="products-head">
+    <h2>shop the <span class="red">full lineup</span> on aaniin.</h2>
+    <div class="meta"><div>collection &middot; <b>8 products</b></div><div>sorted by &middot; <b>vendor pick</b></div></div>
+  </div>
+  <div class="product-grid">
+    <article class="pcard">
+      <div class="img"><span class="badge bestseller">bestseller</span>
+        <span class="heart">&#9825;</span>
+        <img src="images/product-1.jpg" alt="Teff, Brown Flour" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Teff, Brown Flour</span>
+        <div class="price-row"><span class="price">$10.00</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-2.jpg" alt="Teff, Brown Whole Grain" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Teff, Brown Whole Grain</span>
+        <div class="price-row"><span class="price">$9.50</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-3.jpg" alt="Organic Oat Milk Powder" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Organic Oat Milk Powder</span>
+        <div class="price-row"><span class="price">$5.00</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-4.jpg" alt="Organic Hazelnuts, Raw Whole" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Organic Hazelnuts, Raw Whole</span>
+        <div class="price-row"><span class="price">$11.25</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-5.jpg" alt="Organic Coconut Oil, Refined" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Organic Coconut Oil, Refined</span>
+        <div class="price-row"><span class="price">$13.25</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-6.jpg" alt="Organic Licorice Root" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Organic Licorice Root</span>
+        <div class="price-row"><span class="price">$5.00</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-7.jpg" alt="Organic Walnuts, Halves and Pieces" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Organic Walnuts, Halves and Pieces</span>
+        <div class="price-row"><span class="price">$6.00</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="img"><span class="heart">&#9825;</span>
+        <img src="images/product-8.jpg" alt="Organic Cornstarch, GMO Free" style="object-fit:contain;padding:12px;width:100%;height:100%;background:#ffffff">
+      </div>
+      <div class="info">
+        <span class="vendor">om foods</span>
+        <span class="name">Organic Cornstarch, GMO Free</span>
+        <div class="price-row"><span class="price">$8.00</span><span class="add">add to cart &#8594;</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="science">
+  <div class="science-inner">
+    <div class="science-head">
+      <div class="label">why people keep talking about it</div>
+      <h2>integrity at the origin. <em>honest in the pantry.</em></h2>
+    </div>
+    <div class="science-grid">
+      <div class="sci-cell">
+        <div class="n">01 / sourcing</div><h3>Integrity at every origin.</h3><p>Every OM Foods ingredient is sourced with intentionality — knowing where it came from, how it was grown, and what it genuinely costs to get it right.</p>
+      </div>
+      <div class="sci-cell">
+        <div class="n">02 / range</div><h3>From teff to hazelnuts.</h3><p>Ancient grains, seeds, nuts, powders, oils — OM Foods covers the full organic pantry in a single shop, without the premium brand markup.</p>
+      </div>
+      <div class="sci-cell">
+        <div class="n">03 / value</div><h3>Organic should not cost a fortune.</h3><p>OM Foods proves that sourcing with integrity and keeping prices accessible are not mutually exclusive. The organic pantry, democratized for everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="uses" aria-hidden="true">
+  <div class="uses-track">
+    <span><span>ORGANIC</span> <span class="dot"></span>  <span class="red">PANTRY STAPLE</span> <span class="dot"></span>  <span>TEFF</span> <span class="dot"></span>  <span>ANCIENT GRAINS</span> <span class="dot"></span>  <span class="red">ETHICAL SOURCING</span> <span class="dot"></span>  <span>BULK BASICS</span> <span class="dot"></span>  <span>REAL FOOD</span> <span class="dot"></span> </span><span><span>ORGANIC</span> <span class="dot"></span>  <span class="red">PANTRY STAPLE</span> <span class="dot"></span>  <span>TEFF</span> <span class="dot"></span>  <span>ANCIENT GRAINS</span> <span class="dot"></span>  <span class="red">ETHICAL SOURCING</span> <span class="dot"></span>  <span>BULK BASICS</span> <span class="dot"></span>  <span>REAL FOOD</span> <span class="dot"></span> </span>
+  </div>
+</section>
+<section class="quote">
+  <div class="quote-inner">
+    <div class="mark">-- customers, in their own words</div>
+    <blockquote>&ldquo;I have been rebuilding my pantry with OM Foods for a year. The teff flour alone converted me.&rdquo;</blockquote>
+    <cite>anna g., toronto &middot; <b>verified buyer &middot; aaniin.shop</b></cite>
+  </div>
+</section>
+<section class="join">
+  <div class="join-inner">
+    <div>
+      <h2>start the <span class="red">conversation.</span></h2>
+      <p>Get early access to aaniin x OM Foods drops, restocks, and the curated brands joining the platform every month. No spam — just the good stuff worth talking about.</p>
+      <form class="join-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='subscribed';this.querySelector('button').style.background='#DD0000';">
+        <input type="email" placeholder="your email" required>
+        <button type="submit">say aaniin</button>
+      </form>
+    </div>
+    <div class="join-card">
+      <img src="images/lifestyle-2.jpg" alt="OM Foods">
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="word"><svg viewBox="0 0 60 60" width="38" height="38" aria-hidden="true"><path d="M6 38 L34 12 L34 38 Z" fill="#DD0000"></path><circle cx="42" cy="22" r="5" fill="#fff"></circle><circle cx="50" cy="14" r="2.5" fill="#DD0000"></circle></svg><span style="font-weight:700;font-size:20px">aaniin</span></div>
+        <p>aaniin is a curated retail platform for brands that start the conversation -- purpose, product, and impact, in equal measure.</p>
+      </div>
+      <div class="foot-col"><h4>shop</h4><ul><li><a href="#">all vendors</a></li><li><a href="#">apparel</a></li><li><a href="#">wellness</a></li><li><a href="#">accessories</a></li></ul></div>
+      <div class="foot-col"><h4>platform</h4><ul><li><a href="#">become a vendor</a></li><li><a href="#">pop-ups</a></li><li><a href="#">our story</a></li><li><a href="#">press</a></li></ul></div>
+      <div class="foot-col"><h4>support</h4><ul><li><a href="#">contact</a></li><li><a href="#">shipping</a></li><li><a href="#">returns</a></li><li><a href="#">faq</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 aaniin retail inc. &middot; all rights reserved.</span>
+      <div class="right"><a href="#">privacy</a><a href="#">terms</a><a href="#">accessibility</a></div>
+    </div>
+  </div>
+</footer>
+</body></html>
